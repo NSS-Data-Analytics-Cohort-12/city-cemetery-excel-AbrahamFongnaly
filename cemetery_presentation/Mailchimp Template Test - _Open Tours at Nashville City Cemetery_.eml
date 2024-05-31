@@ -1,0 +1,382 @@
+Delivered-To: helloabrahamf@gmail.com
+Received: by 2002:a05:6400:1ca:b0:25e:a36f:30 with SMTP id hx10csp162931ecb;
+        Thu, 30 May 2024 15:54:31 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEKz0u6r4dInZ2uVXLCLD8nG9sQ/sr+IEL7Z+olBbnsSq6nxP9vhleyHgO1vb2JNd8/X8HE
+X-Received: by 2002:a25:6907:0:b0:deb:3c11:8eb9 with SMTP id 3f1490d57ef6-dfa73bcd3b1mr252851276.8.1717109671028;
+        Thu, 30 May 2024 15:54:31 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1717109671; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ThkC4bj6wcMWr6oLfkC/McDLXWscvm/fZLGSqaEtKqwxE7yvDFZ5Rg502CnZDmx8Uw
+         7mzzTvOGileGEwXxGg/9h8S1fqLMwtUxJW6553o0+Ai77wpd2yzazTB0aT+TdOiqkwFB
+         iAbOFrKi97N6EJfqc4zAvTlAKUB/lxRCYC3A2Vvhsf4qct2Bk7ujg4O2NTnlo17kMutd
+         9Pq1GnWnsmHUUkX+8GEsHjSWOevfu+tBIyVmE0xXQSDnaZ1/XmLBPuWSrBqrwxwkids3
+         fbZg13UsZYII5azdKgWXy4NqfEELrqMehrwGc/HV4z5T0JClewojqn5WQAMlc0vj0lvU
+         dVqA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:mime-version:subject:message-id:date:to
+         :reply-to:from:dkim-signature:dkim-signature;
+        bh=b7TxNoTPWISf1MT7RDTwk65UVEQM4zjtLYH8NCOR/ok=;
+        fh=VFDwunOA7TO0ZcA6zwsxnCMrQufRCMJV1T/nOiQfWG8=;
+        b=GP5pQTHGJkATmrYX9xcZ1S66XYbK8ZxqydqGa7WxNjD5/7H+3/3qhwrXbzZMm14ldt
+         4oI+yN3FDxmbW2BCHrhkbu5BpcOmsyIF8RmsOuUCuJfXWtKDlOf+eDLTsLLA8Dx5WG3k
+         32YfcKo4uuewyh1YbggrTbeSaPcMc8mKA9hIoBalr4uV/QAe3gzvLeXn4x6mBXdaBbd8
+         0gHS85Am9GV8i9MxjgBimTxrwc/D4kTApD3Yrog359tJwUdui4V4bR1DWVlu6V9ONd9D
+         d5ZNe4Uqdq50QDxPW3EDk1bDtoUdi8HUgEfVIQoCpm26bqKuqSWrIk4XLhOQ4F3q+rgy
+         Q5lQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.mctxapp.net header.s=k2 header.b=lSNQrDpb;
+       dkim=pass header.i=@mailchimpapp.com header.s=k2 header.b=d+BVT6mF;
+       spf=pass (google.com: domain of bounce-mcsys.us22_213186454.cc4ae9c871.na-helloabrahamf=gmail.com@mail21.atl161.mctxapp.net designates 198.2.140.21 as permitted sender) smtp.mailfrom="bounce-mcsys.us22_213186454.cc4ae9c871.NA-helloabrahamf=gmail.com@mail21.atl161.mctxapp.net";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=mailchimpapp.com
+Return-Path: <bounce-mcsys.us22_213186454.cc4ae9c871.NA-helloabrahamf=gmail.com@mail21.atl161.mctxapp.net>
+Received: from mail21.atl161.mctxapp.net (mail21.atl161.mctxapp.net. [198.2.140.21])
+        by mx.google.com with ESMTPS id 3f1490d57ef6-dfa6efefb1bsi462691276.129.2024.05.30.15.54.30
+        for <helloabrahamf@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 30 May 2024 15:54:30 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-mcsys.us22_213186454.cc4ae9c871.na-helloabrahamf=gmail.com@mail21.atl161.mctxapp.net designates 198.2.140.21 as permitted sender) client-ip=198.2.140.21;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.mctxapp.net header.s=k2 header.b=lSNQrDpb;
+       dkim=pass header.i=@mailchimpapp.com header.s=k2 header.b=d+BVT6mF;
+       spf=pass (google.com: domain of bounce-mcsys.us22_213186454.cc4ae9c871.na-helloabrahamf=gmail.com@mail21.atl161.mctxapp.net designates 198.2.140.21 as permitted sender) smtp.mailfrom="bounce-mcsys.us22_213186454.cc4ae9c871.NA-helloabrahamf=gmail.com@mail21.atl161.mctxapp.net";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=mailchimpapp.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.mctxapp.net;
+	s=k2; t=1717109665; x=1717196065;
+	bh=b7TxNoTPWISf1MT7RDTwk65UVEQM4zjtLYH8NCOR/ok=;
+	h=From:Reply-To:To:Date:Message-ID:X-MC-User:Subject:MIME-Version:
+	 Content-Type:Content-Transfer-Encoding:CC:Date:Subject:From;
+	b=lSNQrDpbUOqm7w/2AauNeissw9+oi7ZbEat/D7FGMbfs5W9ePrJ4uqm+GtmQKBh/H
+	 HkdBYkoNfAxNOtZkSN+DKYHs74HxNp4dfwfEyj6Szyy218JNbr4YmcHNVnJ3DQSz1E
+	 xStWAWq4asTFH2mENcTcYHQ1MxLkXhSV7DRGYMUFhCDBB6GMnoYMn7mMEK69MLcv48
+	 U43bmNei70Lx3x+CYXCrefIQdq48gBFmVBa9pwd0mHiqA/slr2dRZMEQP31SYAzttx
+	 SdkAjPp0n69caU+ln1S2lB6nQ2CgwkAs8gnHiLygFRy/AP+hflNMv5+UcgasEipVwb
+	 lTMlJgjihZhKw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailchimpapp.com;
+	s=k2; t=1717109665; x=1717370165;
+	i=drumham@213186454.mailchimpapp.com;
+	bh=b7TxNoTPWISf1MT7RDTwk65UVEQM4zjtLYH8NCOR/ok=;
+	h=From:Reply-To:To:Date:Message-ID:X-MC-User:Subject:MIME-Version:
+	 Content-Type:Content-Transfer-Encoding:CC:Date:Subject:From;
+	b=d+BVT6mF7Uc4+O9P9t7xyc9Fm1nRYZa40ugvihxFuMF/o2p1w3eNjPGPi73e452dq
+	 Pt3Du39MELyE+a5TBqdaQUOAzCY7EK3bvedXII5b/jnGmG0o8kttD7HGDIGt9ceQRa
+	 xM1yVyDRvGaFO0Lm58XQ/5gPn+BSAUt5h7FuewvpNOBoipxNfvDhlOQs9GUJhfNKZH
+	 y0A0d0Sfm8J9lDvAjCTpZv+svfASZvyGLNgvS19teOIWHKzLSx0U+Gd8MVc3NCHbpn
+	 nVZwEa9l5ONQwflOpCRl8SIqQedXgd2kPAHBtLjB+/rqTrX5ZSZQfi4yX5aS1z52B6
+	 qaqWXpeZunZCA==
+Received: from 127.0.0.1 (localhost [127.0.0.1])
+	by mail21.atl161.mctxapp.net (Mailchimp) with ESMTP id 4Vr1lj40wSzNCtKw8
+	for <helloabrahamf@gmail.com>; Thu, 30 May 2024 22:54:25 +0000 (GMT)
+From:  <drumham@213186454.mailchimpapp.com>
+Reply-To:  <drumham@yahoo.com>
+To:  <helloabrahamf@gmail.com>
+Date: Thu, 30 May 2024 22:54:25 +0000
+Message-ID: <642affc1c134597e996266f8ceb7728778f.20240530225425@mail21.atl161.mctxapp.net>
+X-Mailer: Mailchimp Mailer - **CIDcc4ae9c871eb7728778f**
+X-Campaign: mailchimp642affc1c134597e996266f8c.cc4ae9c871
+X-campaignid: mailchimp642affc1c134597e996266f8c.cc4ae9c871
+X-Report-Abuse: Please report abuse for this campaign here: https://mailchimp.com/contact/abuse/?u=642affc1c134597e996266f8c&id=cc4ae9c871&e=eb7728778f
+X-MC-User: 642affc1c134597e996266f8c
+X-Feedback-ID: 213186454:213186454.cc4ae9c871:us22:mc
+X-Auto-Response-Suppress: OOF, AutoReply
+X-Accounttype: pr
+Subject: Mailchimp Template Test - "Open Tours at Nashville City Cemetery"
+MIME-Version: 1.0
+Content-Type: text/html; charset="utf-8"; format="fixed"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html><html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"u=
+rn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:offic=
+e:office"><head>=0A<!--[if gte mso 15]>=0A<xml>=0A<o:OfficeDocumentSetti=
+ngs>=0A<o:AllowPNG/>=0A<o:PixelsPerInch>96</o:PixelsPerInch>=0A</o:Offic=
+eDocumentSettings>=0A</xml>=0A<![endif]-->=0A<meta charset=3D"UTF-8"/>=
+=0A<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge"/>=0A<meta=
+ name=3D"viewport" content=3D"width=3Ddevice-width=2C initial-scale=3D1"=
+/>=0A<title>*|MC:SUBJECT|*</title>=0A<link rel=3D"stylesheet" href=3D"ht=
+tps://fonts.googleapis.com/css?family=3DPlayfair+Display:400=2C400i=2C70=
+0=2C700i=2C900=2C900i"/><style>          img{-ms-interpolation-mode:bicu=
+bic;} =0A          table=2C td{mso-table-lspace:0pt; mso-table-rspace:0p=
+t;} =0A          .mceStandardButton=2C .mceStandardButton td=2C .mceStan=
+dardButton td a{mso-hide:all !important;} =0A          p=2C a=2C li=2C t=
+d=2C blockquote{mso-line-height-rule:exactly;} =0A          p=2C a=2C li=
+=2C td=2C body=2C table=2C blockquote{-ms-text-size-adjust:100%; -webkit=
+-text-size-adjust:100%;} =0A          @media only screen and (max-width:=
+ 480px){=0A            body=2C table=2C td=2C p=2C a=2C li=2C blockquote=
+{-webkit-text-size-adjust:none !important;} =0A          }=0A          .=
+mcnPreviewText{display: none !important;} =0A          .bodyCell{margin:=
+0 auto; padding:0; width:100%;}=0A          .ExternalClass=2C .ExternalC=
+lass p=2C .ExternalClass td=2C .ExternalClass div=2C .ExternalClass span=
+=2C .ExternalClass font{line-height:100%;} =0A          .ReadMsgBody{wid=
+th:100%;} .ExternalClass{width:100%;} =0A          a[x-apple-data-detect=
+ors]{color:inherit !important; text-decoration:none !important; font-siz=
+e:inherit !important; font-family:inherit !important; font-weight:inheri=
+t !important; line-height:inherit !important;} =0A            body{heigh=
+t:100%; margin:0; padding:0; width:100%; background: #ffffff;}=0A      =
+      p{margin:0; padding:0;} =0A            table{border-collapse:colla=
+pse;} =0A            td=2C p=2C a{word-break:break-word;} =0A          =
+  h1=2C h2=2C h3=2C h4=2C h5=2C h6{display:block; margin:0; padding:0;}=
+ =0A            img=2C a img{border:0; height:auto; outline:none; text-d=
+ecoration:none;} =0A            a[href^=3D"tel"]=2C a[href^=3D"sms"]{col=
+or:inherit; cursor:default; text-decoration:none;} =0A            li p {=
+margin: 0 !important;}=0A            .ProseMirror a {=0A               =
+ pointer-events: none;=0A            }=0A            @media only screen=
+ and (max-width: 640px){=0A                .mceClusterLayout td{padding:=
+ 4px !important;} =0A            }=0A            @media only screen and=
+ (max-width: 480px){=0A                body{width:100% !important; min-w=
+idth:100% !important; } =0A                body.mobile-native {=0A     =
+               -webkit-user-select: none; user-select: none; transition:=
+ transform 0.2s ease-in; transform-origin: top center;=0A              =
+  }=0A                body.mobile-native.selection-allowed a=2C body.mob=
+ile-native.selection-allowed .ProseMirror {=0A                    user-s=
+elect: auto;=0A                    -webkit-user-select: auto;=0A       =
+         }=0A                colgroup{display: none;}=0A               =
+ img{height: auto !important;}=0A                .mceWidthContainer{max-=
+width: 660px !important;}=0A                .mceColumn{display: block !i=
+mportant; width: 100% !important;}=0A                .mceColumn-forceSpa=
+n{display: table-cell !important; width: auto !important;}=0A          =
+      .mceColumn-forceSpan .mceButton a{min-width:0 !important;}=0A    =
+            .mceBlockContainer{padding-right:16px !important; padding-le=
+ft:16px !important;} =0A                .mceTextBlockContainer{padding-r=
+ight:16px !important; padding-left:16px !important;} =0A               =
+ .mceBlockContainerE2E{padding-right:0px; padding-left:0px;} =0A       =
+         .mceSpacing-24{padding-right:16px !important; padding-left:16px=
+ !important;}=0A                .mceImage=2C .mceLogo{width: 100% !impor=
+tant; height: auto !important;} =0A                .mceFooterSection .mc=
+eText=2C .mceFooterSection .mceText p{font-size: 16px !important; line-h=
+eight: 140% !important;}=0A            }=0A            div[contenteditab=
+le=3D"true"] {outline: 0;}=0A            .ProseMirror .empty-node=2C .Pr=
+oseMirror:empty {position: relative;}=0A            .ProseMirror .empty-=
+node::before=2C .ProseMirror:empty::before {=0A                position:=
+ absolute;=0A                left: 0;=0A                right: 0;=0A   =
+             color: rgba(0=2C0=2C0=2C0.2);=0A                cursor: tex=
+t;=0A            }=0A            .ProseMirror .empty-node:hover::before=
+=2C .ProseMirror:empty:hover::before {=0A                color: rgba(0=
+=2C0=2C0=2C0.3);=0A            }=0A            .ProseMirror h1.empty-nod=
+e:only-child::before=2C=0A            .ProseMirror h2.empty-node:only-ch=
+ild::before=2C=0A            .ProseMirror h3.empty-node:only-child::befo=
+re=2C=0A            .ProseMirror h4.empty-node:only-child::before {=0A =
+               content: 'Heading';=0A            }=0A            .ProseM=
+irror p.empty-node:only-child::before=2C .ProseMirror:empty::before {=0A=
+                content: 'Start typing...';=0A            }=0A         =
+   a .ProseMirror p.empty-node::before=2C a .ProseMirror:empty::before {=
+=0A                content: '';=0A            }=0A            .mceText=
+=2C .ProseMirror {=0A                white-space: pre-wrap;=0A         =
+   }=0A            .mceImageBorder {display: inline-block;}=0A         =
+   .mceImageBorder img {border: 0 !important;}=0Abody=2C #bodyTable { ba=
+ckground-color: rgb(234=2C 236=2C 226); }.mceText=2C .mceLabel { font-fa=
+mily: Arial=2C "Helvetica Neue"=2C Helvetica=2C sans-serif; }.mceText=2C=
+ .mceLabel { color: rgb(0=2C 0=2C 0); }.mceText h1 { margin-bottom: 0px;=
+ }.mceText p { margin-bottom: 0px; }.mceText label { margin-bottom: 0px;=
+ }.mceText input { margin-bottom: 0px; }.mceSpacing-24 .mceInput + .mceE=
+rrorMessage { margin-top: -12px; }.mceText h1 { margin-bottom: 0px; }.mc=
+eText p { margin-bottom: 0px; }.mceText label { margin-bottom: 0px; }.mc=
+eText input { margin-bottom: 0px; }.mceSpacing-12 .mceInput + .mceErrorM=
+essage { margin-top: -6px; }.mceText h1 { margin-bottom: 0px; }.mceText=
+ p { margin-bottom: 0px; }.mceText label { margin-bottom: 0px; }.mceText=
+ input { margin-bottom: 0px; }.mceSpacing-48 .mceInput + .mceErrorMessag=
+e { margin-top: -24px; }.mceInput { background-color: transparent; borde=
+r: 2px solid rgb(208=2C 208=2C 208); width: 60%; color: rgb(77=2C 77=2C=
+ 77); display: block; }.mceInput[type=3D"radio"]=2C .mceInput[type=3D"ch=
+eckbox"] { float: left; margin-right: 12px; display: inline; width: auto=
+ !important; }.mceLabel > .mceInput { margin-bottom: 0px; margin-top: 2p=
+x; }.mceLabel { display: block; }.mceText p { color: rgb(0=2C 0=2C 0); f=
+ont-family: Arial=2C "Helvetica Neue"=2C Helvetica=2C sans-serif; font-s=
+ize: 16px; font-weight: normal; line-height: 1.5; text-align: center; di=
+rection: ltr; }.mceText h1 { color: rgb(0=2C 0=2C 0); font-family: "Play=
+fair Display"=2C Georgia=2C "Times New Roman"=2C serif; font-size: 31px;=
+ font-weight: bold; line-height: 1.5; text-align: center; direction: ltr=
+; }.mceText a { color: rgb(0=2C 108=2C 115); font-style: normal; font-we=
+ight: normal; text-decoration: underline; direction: ltr; }=0A@media onl=
+y screen and (max-width: 480px) {=0A            .mceText p { font-size:=
+ 16px !important; line-height: 1.5 !important; }=0A          }=0A@media=
+ only screen and (max-width: 480px) {=0A            .mceText h1 { font-s=
+ize: 31px !important; line-height: 1.5 !important; }=0A          }=0A@me=
+dia only screen and (max-width: 480px) {=0A            .mceBlockContaine=
+r { padding-left: 16px !important; padding-right: 16px !important; }=0A=
+          }=0A#dataBlockId-10 p=2C #dataBlockId-10 h1=2C #dataBlockId-10=
+ h2=2C #dataBlockId-10 h3=2C #dataBlockId-10 h4=2C #dataBlockId-10 ul {=
+ text-align: center; }=0A@media only screen and (max-width: 480px) {=0A=
+        .mobileClass-731 {padding-left: 12 !important;padding-top: 0 !im=
+portant;padding-right: 12 !important;}.mobileClass-731 {padding-left: 12=
+ !important;padding-top: 0 !important;padding-right: 12 !important;}.mob=
+ileClass-731 {padding-left: 12 !important;padding-top: 0 !important;padd=
+ing-right: 12 !important;}=0A      }</style></head>=0A<body>=0A<!--*|IF:=
+MC_PREVIEW_TEXT|*-->=0A<!--[if !gte mso 9]><!----><span class=3D"mcnPrev=
+iewText" style=3D"display:none; font-size:0px; line-height:0px; max-heig=
+ht:0px; max-width:0px; opacity:0; overflow:hidden; visibility:hidden; ms=
+o-hide:all;">*|MC_PREVIEW_TEXT|*</span><!--<![endif]-->=0A<!--*|END:IF|*=
+-->=0A<center>=0A<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ height=3D"100%" width=3D"100%" id=3D"bodyTable" style=3D"background-col=
+or: rgb(234=2C 236=2C 226);">=0A<tbody><tr>=0A<td class=3D"bodyCell" ali=
+gn=3D"center" valign=3D"top">=0A<table id=3D"root" border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0" width=3D"100%"><tbody data-block-id=3D"14" c=
+lass=3D"mceWrapper"><tr><td align=3D"center" valign=3D"top" class=3D"mce=
+WrapperOuter"><!--[if (gte mso 9)|(IE)]><table align=3D"center" border=
+=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"660" style=3D"width:=
+660px;"><tr><td><![endif]--><table border=3D"0" cellpadding=3D"0" cellsp=
+acing=3D"0" width=3D"100%" style=3D"max-width:660px" role=3D"presentatio=
+n"><tbody><tr><td style=3D"background-color:#d2c3b1;background-position:=
+center;background-repeat:no-repeat;background-size:cover" class=3D"mceWr=
+apperInner" valign=3D"top"><table align=3D"center" border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentation" data-bl=
+ock-id=3D"13"><tbody><tr class=3D"mceRow"><td style=3D"background-positi=
+on:center;background-repeat:no-repeat;background-size:cover" valign=3D"t=
+op"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100=
+%" role=3D"presentation"><tbody><tr><td style=3D"padding-top:0;padding-b=
+ottom:0" class=3D"mceColumn" data-block-id=3D"-10" valign=3D"top" colspa=
+n=3D"12" width=3D"100%"><table border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" width=3D"100%" role=3D"presentation"><tbody><tr><td style=3D"pad=
+ding-top:0;padding-bottom:0;padding-right:0;padding-left:0" valign=3D"to=
+p"><table width=3D"100%" style=3D"border:0;border-collapse:separate"><tb=
+ody><tr><td style=3D"padding-left:24px;padding-right:24px;padding-top:48=
+px;padding-bottom:12px" class=3D"mceTextBlockContainer"><div data-block-=
+id=3D"1" class=3D"mceText" id=3D"dataBlockId-1" style=3D"width:100%"><p=
+ class=3D"last-child"><a href=3D"*|ARCHIVE|*">View this email in your br=
+owser</a></p></div></td></tr></tbody></table></td></tr><tr><td style=3D"=
+background-color:transparent;padding-top:0;padding-bottom:0;padding-righ=
+t:0;padding-left:0" class=3D"mceBlockContainer" valign=3D"top"><table bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"b=
+ackground-color:transparent" role=3D"presentation" class=3D"mceDividerCo=
+ntainer" data-block-id=3D"2"><tbody><tr><td style=3D"min-width:100%;bord=
+er-top:20px solid transparent" class=3D"mceDividerBlock" valign=3D"top">=
+</td></tr></tbody></table></td></tr><tr><td style=3D"padding-top:12px;pa=
+dding-bottom:12px;padding-right:48px;padding-left:48px" class=3D"mceBloc=
+kContainer" align=3D"center" valign=3D"top"><span class=3D"mceImageBorde=
+r" style=3D"border:0;vertical-align:top;margin:0"><img data-block-id=3D"=
+3" width=3D"376.9430051813471" height=3D"auto" style=3D"width:376.943005=
+1813471px;height:auto;max-width:376.94300518134713px !important;display:=
+block" alt=3D"Logo" src=3D"https://mcusercontent.com/642affc1c134597e996=
+266f8c/images/fa6c0ba3-27a3-f0aa-5ba9-87210644b4ee.png" class=3D"mceLogo=
+"/></span></td></tr><tr><td style=3D"padding-top:0;padding-bottom:0;padd=
+ing-right:0;padding-left:0" valign=3D"top"><table width=3D"100%" style=
+=3D"border:0;border-collapse:separate"><tbody><tr><td style=3D"padding-l=
+eft:24px;padding-right:24px;padding-top:12px;padding-bottom:12px" class=
+=3D"mceTextBlockContainer"><div data-block-id=3D"17" class=3D"mceText" i=
+d=3D"dataBlockId-17" style=3D"width:100%"><h1><span style=3D"font-weight=
+:normal;">The American Civil War ended on April 9th=2C 1865. The 3 month=
+s following=2C Nashville City Cemetery experienced a consistent uptick i=
+n burials</span></h1><p class=3D"last-child"><br/></p></div></td></tr></=
+tbody></table></td></tr><tr><td style=3D"padding-top:12px;padding-bottom=
+:12px;padding-right:0;padding-left:0" class=3D"mceBlockContainer" align=
+=3D"center" valign=3D"top"><span class=3D"mceImageBorder" style=3D"borde=
+r:0;vertical-align:top;margin:0"><img data-block-id=3D"18" width=3D"564"=
+ height=3D"auto" style=3D"width:564px;height:auto;max-width:1655px !impo=
+rtant;display:block" alt=3D"" src=3D"https://mcusercontent.com/642affc1c=
+134597e996266f8c/images/7eacd69d-7162-7a48-058b-2173ccd4a1a4.png" role=
+=3D"presentation" class=3D"imageDropZone mceImage"/></span></td></tr><tr=
+><td style=3D"padding-top:0;padding-bottom:0;padding-right:0;padding-lef=
+t:0" valign=3D"top"><table width=3D"100%" style=3D"border:0;border-colla=
+pse:separate"><tbody><tr><td style=3D"padding-left:24px;padding-right:24=
+px;padding-top:12px;padding-bottom:12px" class=3D"mceTextBlockContainer"=
+><div data-block-id=3D"5" class=3D"mceText" id=3D"dataBlockId-5" style=
+=3D"width:100%"><h1 class=3D"last-child"><span style=3D"font-family: 'Pl=
+ayfair Display'=2C Georgia=2C 'Times New Roman'=2C serif"><span style=3D=
+"font-weight:normal;">Join us as we honor staff excellence from past=2C=
+ present=2C and future at our fundraiser on July 13th</span></span></h1>=
+</div></td></tr></tbody></table></td></tr><tr><td style=3D"padding-top:1=
+2px;padding-bottom:12px;padding-right:0;padding-left:0" class=3D"mceBloc=
+kContainer" align=3D"center" valign=3D"top"><span class=3D"mceImageBorde=
+r" style=3D"border:0;vertical-align:top;margin:0"><img data-block-id=3D"=
+16" width=3D"564" height=3D"auto" style=3D"width:564px;height:auto;max-w=
+idth:1825px !important;display:block" alt=3D"" src=3D"https://mcusercont=
+ent.com/642affc1c134597e996266f8c/images/63177a66-a9d0-3c05-245c-c6dfab9=
+63612.jpg" role=3D"presentation" class=3D"imageDropZone mceImage"/></spa=
+n></td></tr><tr><td style=3D"padding-top:0;padding-bottom:0;padding-righ=
+t:0;padding-left:0" valign=3D"top"><table width=3D"100%" style=3D"border=
+:0;border-collapse:separate"><tbody><tr><td style=3D"padding-left:24px;p=
+adding-right:24px;padding-top:12px;padding-bottom:12px" class=3D"mceText=
+BlockContainer"><div data-block-id=3D"19" class=3D"mceText" id=3D"dataBl=
+ockId-19" style=3D"width:100%"><p class=3D"last-child">Join us at our St=
+aff Excellence fundraiser on July 13th=2C 2024. Each ticket is $30 and w=
+ill grant an information loaded guided tour (Which U.S. President is bur=
+ied here?)=2C a food voucher=2C and entry into a raffle for a =E2=80=9CD=
+ay on the Lake with Bill Dance=E2=80=9D. We cannot wait for your arrival=
+!</p></div></td></tr></tbody></table></td></tr><tr><td style=3D"backgrou=
+nd-color:transparent;padding-top:0;padding-bottom:0;padding-right:0;padd=
+ing-left:0" class=3D"mceBlockContainer" valign=3D"top"><table border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"backgroun=
+d-color:transparent" role=3D"presentation" class=3D"mceDividerContainer"=
+ data-block-id=3D"7"><tbody><tr><td style=3D"min-width:100%;border-top:2=
+0px solid transparent" class=3D"mceDividerBlock" valign=3D"top"></td></t=
+r></tbody></table></td></tr><tr><td style=3D"padding-top:12px;padding-bo=
+ttom:12px;padding-right:0;padding-left:0" class=3D"mceLayoutContainer" v=
+align=3D"top"><table align=3D"center" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" width=3D"100%" role=3D"presentation" data-block-id=3D"8">=
+<tbody><tr class=3D"mceRow"><td style=3D"background-position:center;back=
+ground-repeat:no-repeat;background-size:cover" valign=3D"top"><table bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"24" width=3D"100%" role=3D"pr=
+esentation"><tbody><tr><td style=3D"margin-bottom:24px" class=3D"mceColu=
+mn" data-block-id=3D"-9" valign=3D"top" colspan=3D"12" width=3D"100%"><t=
+able border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" rol=
+e=3D"presentation"><tbody><tr><td align=3D"center" valign=3D"top"><table=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"" role=3D"pre=
+sentation" class=3D"mceClusterLayout" data-block-id=3D"-8"><tbody><tr><t=
+d style=3D"padding-left:24px;padding-top:0;padding-right:24px" data-brea=
+kpoint=3D"731" valign=3D"top" class=3D"mobileClass-731"><span class=3D"m=
+ceImageBorder" style=3D"border:0;vertical-align:top;margin:0"><img data-=
+block-id=3D"-5" width=3D"40" height=3D"auto" style=3D"width:40px;height:=
+auto;max-width:40px !important;display:block" alt=3D"Facebook icon" src=
+=3D"https://cdn-images.mailchimp.com/icons/social-block-v3/block-icons-v=
+3/facebook-filled-dark-40.png" class=3D"mceImage"/></span></td><td style=
+=3D"padding-left:24px;padding-top:0;padding-right:24px" data-breakpoint=
+=3D"731" valign=3D"top" class=3D"mobileClass-731"><span class=3D"mceImag=
+eBorder" style=3D"border:0;vertical-align:top;margin:0"><img data-block-=
+id=3D"-6" width=3D"40" height=3D"auto" style=3D"width:40px;height:auto;m=
+ax-width:40px !important;display:block" alt=3D"Instagram icon" src=3D"ht=
+tps://cdn-images.mailchimp.com/icons/social-block-v3/block-icons-v3/inst=
+agram-filled-dark-40.png" class=3D"mceImage"/></span></td><td style=3D"p=
+adding-left:24px;padding-top:0;padding-right:24px" data-breakpoint=3D"73=
+1" valign=3D"top" class=3D"mobileClass-731"><span class=3D"mceImageBorde=
+r" style=3D"border:0;vertical-align:top;margin:0"><img data-block-id=3D"=
+-7" width=3D"40" height=3D"auto" style=3D"width:40px;height:auto;max-wid=
+th:40px !important;display:block" alt=3D"Twitter icon" src=3D"https://cd=
+n-images.mailchimp.com/icons/social-block-v3/block-icons-v3/twitter-fill=
+ed-dark-40.png" class=3D"mceImage"/></span></td></tr></tbody></table></t=
+d></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></tab=
+le></td></tr><tr><td style=3D"padding-top:8px;padding-bottom:8px;padding=
+-right:8px;padding-left:8px" class=3D"mceLayoutContainer" valign=3D"top"=
+><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" width=3D"100%" role=3D"presentation" data-block-id=3D"12" id=3D"sectio=
+n_cd6aaa073a6d1bc686740985d9eaabf9" class=3D"mceFooterSection"><tbody><t=
+r class=3D"mceRow"><td style=3D"background-position:center;background-re=
+peat:no-repeat;background-size:cover" valign=3D"top"><table border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"12" width=3D"100%" role=3D"presentatio=
+n"><tbody><tr><td style=3D"padding-top:0;padding-bottom:0;margin-bottom:=
+12px" class=3D"mceColumn" data-block-id=3D"-3" valign=3D"top" colspan=3D=
+"12" width=3D"100%"><table border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" width=3D"100%" role=3D"presentation"><tbody><tr><td style=3D"padding=
+-top:12px;padding-bottom:12px;padding-right:0;padding-left:0" class=3D"m=
+ceBlockContainer" align=3D"center" valign=3D"top"><span class=3D"mceImag=
+eBorder" style=3D"border:0;vertical-align:top;margin:0"><img data-block-=
+id=3D"9" width=3D"109.99999999999999" height=3D"auto" style=3D"width:109=
+.99999999999999px;height:auto;max-width:110px !important;display:block"=
+ alt=3D"Logo" src=3D"https://mcusercontent.com/642affc1c134597e996266f8c=
+/images/fa6c0ba3-27a3-f0aa-5ba9-87210644b4ee.png" class=3D"mceLogo"/></s=
+pan></td></tr><tr><td style=3D"padding-top:0;padding-bottom:0;padding-ri=
+ght:0;padding-left:0" align=3D"center" valign=3D"top"><table width=3D"10=
+0%" style=3D"border:0;border-collapse:separate"><tbody><tr><td style=3D"=
+padding-left:16px;padding-right:16px;padding-top:12px;padding-bottom:12p=
+x" class=3D"mceTextBlockContainer"><div data-block-id=3D"10" class=3D"mc=
+eText" id=3D"dataBlockId-10" style=3D"display:inline-block;width:100%"><=
+p class=3D"last-child"><em><span style=3D"font-size: 12px">Copyright (C)=
+ 2024 Nashville City Cemetery. All rights reserved.</span></em><br/><br/=
+><span style=3D"font-size: 12px">Our mailing address is:</span><br/><spa=
+n style=3D"font-size: 12px">1001 4th ave S=2C Nashville=2C TN or Website=
+: thenashvillecitycemetery.org</span><br/><br/><span style=3D"font-size:=
+ 12px">Want to change how you receive these emails?</span><br/><span sty=
+le=3D"font-size: 12px">You can </span><a href=3D"*|UPDATE_PROFILE|*"><sp=
+an style=3D"font-size: 12px">update your preferences</span></a><span sty=
+le=3D"font-size: 12px"> or </span><a href=3D"*|UNSUB|*"><span style=3D"f=
+ont-size: 12px">unsubscribe</span></a></p></div></td></tr></tbody></tabl=
+e></td></tr><tr><td class=3D"mceLayoutContainer" align=3D"center" valign=
+=3D"top"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" width=3D"100%" role=3D"presentation" data-block-id=3D"-2"><tbo=
+dy><tr class=3D"mceRow"><td style=3D"background-position:center;backgrou=
+nd-repeat:no-repeat;background-size:cover;padding-top:0px;padding-bottom=
+:0px" valign=3D"top"><table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"24" width=3D"100%" role=3D"presentation"><tbody></tbody></table></td=
+></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></tabl=
+e></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody>=
+</table></td></tr></tbody></table></td></tr></tbody></table><!--[if (gte=
+ mso 9)|(IE)]></td></tr></table><![endif]--></td></tr></tbody></table>=
+=0A</td>=0A</tr>=0A</tbody></table>=0A</center>=0A</body></html>
