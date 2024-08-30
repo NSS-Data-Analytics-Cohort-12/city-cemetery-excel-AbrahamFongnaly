@@ -10,7 +10,7 @@ The dataset includes burial records from 1846 to 1979, reflecting historical tre
 
 Objectives
 Explore and Clean Data
-Perform Analysis using pivot tables, xlookups, visualizations, and other key Excel functions
+Perform Analysis using pivot tables, xlookups, visualizations, and other key Excel functions 
 Create Marketing Materials
 
 Steps
