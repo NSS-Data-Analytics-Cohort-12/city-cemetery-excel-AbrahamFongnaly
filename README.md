@@ -2,7 +2,7 @@ Nashville City Cemetery Data Analysis
 Welcome to the Nashville City Cemetery data analysis project. This README provides an overview of the dataset and steps for analyzing and visualizing historical burial data.
 
 Technology Used:
-Microsoft Excel: 
+Microsoft Excel 
 
 Dataset Overview
 The dataset includes burial records from 1846 to 1979, reflecting historical trends in medicine, literacy, and more. It may contain inconsistencies due to its handwritten origins.
@@ -59,3 +59,5 @@ Percentage and Proportion Calculations | Solving Proportions
 Excel FILTER Function
 
 Feel free to reach out with any questions. Happy analyzing!
+
+This project was completed as part of an apprenticeship with Nashville Software School.
