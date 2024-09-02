@@ -46,8 +46,4 @@ For additional guidance, refer to:
 [Percentage and Proportion Calculations](https://www.wikihow.com/Calculate-Percentages),
 [Solving Proportions](https://www.wikihow.com/Solve-Proportions)
 
-Excel FILTER Function
-
-Feel free to reach out with any questions. Happy analyzing!
-
 This project was completed as part of an apprenticeship with Nashville Software School.
